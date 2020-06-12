@@ -240,13 +240,25 @@ function getArtistByIndex(array, index) {
   /**
 
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who lived in the 20th century (1900-2000) */
+/* Task 4: Create a function called get20s() that takes data as an argument 
+and returns an array with names of artists who lived in the 20th century (1900-2000) */
 
-function get20s(/* Code here */){
+// The function is to convert arr.years to an array with born and death year, then filter who born between 1900 - 2000;
 
-  /* Code here */
-
+function get20s(arr){
+    const names = [];
+    for(let i = 0; i < arr.length; i++) {
+      let yearArry = arr[i].years.split(' ');
+      let born = Number(yearArry[0]);
+      let death = Number(yearArry[2]);
+      if(born >= 1900 && death <= 2000) {
+        names.push(arr[i].name);
+      }
+    }
+    return names;
 }
+
+console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
