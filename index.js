@@ -295,11 +295,23 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should console.log() the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function addArtist(arr){
+    artists.push(arr);
+    console.log(artists[artists.length-1]);
   }
+
+let myName = {
+  "id" : 21,
+  "name" : "Yue Su",
+  "year" : "1982 - current",
+  "genre" : "Web Design",
+  "nationality" : "Canadaian",
+  "bio" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta natus id inventore dignissimos tenetur quo veritatis, repudiandae vero eaque, sequi excepturi reiciendis libero doloremque consequatur possimus voluptatibus facere labore ratione."
+}
+
+addArtist(myName);
+
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
