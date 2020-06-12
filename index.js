@@ -370,7 +370,6 @@ function getHTML(/* Code here */){
 function randomize(arr){
     const copyArtists = [...artists];
     const randomArr = []; 
-    const finalArr =[];
     for(let i = arr.length; i > 0; i--) {
       let arrLength = arr.length;
       let index = Math.floor(Math.random() * i);
@@ -380,6 +379,21 @@ function randomize(arr){
   }
 
   console.log(randomize(artists));
-  console.log(artists);
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
+
+ const nameList = function (arr) {
+  for(let i = 0; i < arr.length; i++) {
+    let yearArry = arr[i].years.split(' ');
+    let born = Number(yearArry[0]);
+    let death = Number(yearArry[2]);
+    if(born >= 1900 && death <= 2000) {
+      return arr[i].name;
+    }
+  }
+  
+ }
+
+ const namesArrs = artists.map(nameList);
+
+ console.log(namesArrs);
